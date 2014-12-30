@@ -1,8 +1,15 @@
 package org.person;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
 public class Person {
@@ -11,6 +18,13 @@ public class Person {
 	String name;
 	String phone;
 	
+	@OneToMany(mappedBy="owner",cascade=CascadeType.PERSIST, fetch=FetchType.EAGER)
+	List<Car> carList = new ArrayList<Car>();
+	
+	public void addCar(Car car){
+		carList.add(car);
+		car.setOwner(this);
+	}
 	public String getName() {
 		return name;
 	}
@@ -23,6 +37,10 @@ public class Person {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	
+	public void showCar(){
+		for (Car car : carList) {
+			System.out.println("===== Car Model: "+car.getModel());
+		}
+	}
 	
 }

@@ -23,5 +23,6 @@
 
 		<!-- Mapping files -->
 		<mapping class="org.person.Person" />
+		<mapping class="org.person.Car" />
 	</session-factory>
 </hibernate-configuration>

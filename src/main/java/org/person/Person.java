@@ -16,8 +16,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)		// By default inheritance type is SINGLE_TABLE
-@DiscriminatorColumn(name = "Person_Status", discriminatorType = DiscriminatorType.STRING)		// @discriminator is optional
+@Inheritance(strategy = InheritanceType.JOINED)		// By default inheritance type is SINGLE_TABLE
 public class Person {
 	@Id
 	@GeneratedValue

@@ -22,18 +22,22 @@ public class AppPerson {
 	public static void main(String[] args) {
 		Session session = sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();
-		Person p = new Person();
+		Student p = new Student();
 		Car c1 = new Car("Nano");
 		Car c2 = new Car("Hyundai");
+		
 		p.setName("Ramesh");
 		p.setPhone("434345");
 		p.addCar(c1);
+		p.setMarks(45);
 		session.persist(p);
 		p.setPhone("44444444444");
-		Person p1 = new Person();
+		
+		Student p1 = new Student();
 		p1.setName("Deepesh");
 		p1.setPhone("8584844");
 		p1.addCar(c2);
+		p1.setMarks(65);
 		session.persist(p1);
 		tx.commit();
 		session.close();

@@ -4,13 +4,13 @@ import javax.persistence.Entity;
 
 @Entity
 public class Student extends Person{
-	int marks;
+	Integer marks;
 	
-	public int getMarks() {
+	public Integer getMarks() {
 		return marks;
 	}
 
-	public void setMarks(int marks) {
+	public void setMarks(Integer marks) {
 		this.marks = marks;
 	}
 	

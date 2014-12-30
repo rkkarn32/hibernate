@@ -33,11 +33,11 @@ public class AppPerson {
 		session.persist(p);
 		p.setPhone("44444444444");
 		
-		Student p1 = new Student();
+		Teacher p1 = new Teacher();
 		p1.setName("Deepesh");
 		p1.setPhone("8584844");
 		p1.addCar(c2);
-		p1.setMarks(65);
+		p1.setSubject("Math");
 		session.persist(p1);
 		tx.commit();
 		session.close();
